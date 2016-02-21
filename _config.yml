@@ -3,7 +3,7 @@ name: Portfolio # place site name
 description: web-sites, applications, pet-projects and more # put slogan here
 destination: jekyllbuild #destination folder, not the default _site, because grunt has problems with sites starting with an underscore
 url: http://burakov.cf/ #place url
-baseurl: portfolio #place folder name if site is served in subfolder
+baseurl: #portfolio #place folder name if site is served in subfolder
 permalink: /:title/
 paginate: 8
 paginate_path: /page/:num/
