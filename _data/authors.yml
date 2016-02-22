@@ -10,14 +10,12 @@
 #   email: someone@something.com //--> optional
 
 -
-  id: someone
-  name: Some Person
+  id: burakov
+  name: Ilya Burakov
   avatar: /profile-pic.jpg
-  bio: this is some more information about the author.
-  facebook: https://www.facebook.com/someone
-  twitter: https://twitter.com/someone
-  instagram: http://instagram.com/someone
-  email: someone@something.com
+  bio: software developer
+  facebook: https://www.facebook.com/ilya.burakov
+  email: mailparser@mail.ru
 -
   id: person
   avatar: /profile-pic.jpg

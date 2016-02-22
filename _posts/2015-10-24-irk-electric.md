@@ -1,5 +1,5 @@
 ---
-author: Ilya Burakov
+author: burakov
 layout: post-no-image
 type: gallery
 featimg: irk-electric-preview.png
