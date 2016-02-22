@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-
+    "use strict";
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -83,7 +83,22 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        
+
+        uglify: {
+            global: {
+                files: [{
+                    src: 'js/global/*.js',
+                    dest: 'js/build/global.min.js'
+                }]
+            },
+            infinite: {
+                files: [{
+                    src: 'js/infinite/*.js',
+                    dest: 'js/build/infinite.min.js'
+                }]
+            }
+        },
+
         sass: {
             options: {
                 outputStyle: 'compressed'
@@ -129,21 +144,6 @@ module.exports = function (grunt) {
                         dest: 'jekyllbuild/'
                     }
                 ]
-            }
-        },
-        
-        uglify: {
-            global: {
-                files: [{
-                    src: 'jekyllbuild/js/global/*.js',
-                    dest: 'jekyllbuild/js/build/global.min.js'
-                }]
-            },
-            infinite: {
-                files: [{
-                    src: 'jekyllbuild/js/infinite/*.js',
-                    dest: 'jekyllbuild/js/build/infinite.min.js'
-                }]
             }
         },
 
@@ -202,11 +202,9 @@ module.exports = function (grunt) {
 
 
     require('load-grunt-tasks')(grunt);
-    
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    
+
     grunt.registerTask("serve", ["shell:jekyllServe"]);
-    grunt.registerTask("default", ["newer:imagemin", "responsive_images", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "uglify", "open", "watch"]);
-    grunt.registerTask("build", ["imagemin", "responsive_images", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "uglify"]);
+    grunt.registerTask("default", ["newer:imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "open", "watch"]);
+    grunt.registerTask("build", ["imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:jekyllBuild", "copy"]);
     grunt.registerTask("deploy", ["buildcontrol:pages"]);
 };
