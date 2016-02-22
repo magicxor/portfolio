@@ -83,18 +83,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
-        uglify: {
-            global: {
-                src: ['js/*.js', '!js/infinite/*.js'],
-                dest: 'js/build/global.min.js'
-            },
-            infinite: {
-                src: 'js/infinite/*.js',
-                dest: 'js/build/infinite.min.js'
-            }
-        },
-
+        
         sass: {
             options: {
                 outputStyle: 'compressed'
@@ -103,11 +92,12 @@ module.exports = function (grunt) {
                 files: {
                     'css/main.css': 'sass/main.scss',
                     'css/grid.css': 'sass/grid.scss',
-                    'css/classic.css': 'sass/classic.scss',
-                    // you may want to remove these for your site
-                    'css/main_brown.css': 'sass/main_brown.scss',
-                    'css/main_green.css': 'sass/main_green.scss',
-                    'css/main_teal.css': 'sass/main_teal.scss'
+                    'css/classic.css': 'sass/classic.scss'
+                        //,
+                        // you may want to remove these for your site
+                        //'css/main_brown.css': 'sass/main_brown.scss',
+                        //'css/main_green.css': 'sass/main_green.scss',
+                        //'css/main_teal.css': 'sass/main_teal.scss'
                 }
             }
         },
@@ -139,6 +129,21 @@ module.exports = function (grunt) {
                         dest: 'jekyllbuild/'
                     }
                 ]
+            }
+        },
+        
+        uglify: {
+            global: {
+                files: [{
+                    src: 'jekyllbuild/js/global/*.js',
+                    dest: 'jekyllbuild/js/build/global.min.js'
+                }]
+            },
+            infinite: {
+                files: [{
+                    src: 'jekyllbuild/js/infinite/*.js',
+                    dest: 'jekyllbuild/js/build/infinite.min.js'
+                }]
             }
         },
 
@@ -197,9 +202,11 @@ module.exports = function (grunt) {
 
 
     require('load-grunt-tasks')(grunt);
-
+    
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    
     grunt.registerTask("serve", ["shell:jekyllServe"]);
-    grunt.registerTask("default", ["newer:imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "open", "watch"]);
-    grunt.registerTask("build", ["imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:jekyllBuild", "copy"]);
+    grunt.registerTask("default", ["newer:imagemin", "responsive_images", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "uglify", "open", "watch"]);
+    grunt.registerTask("build", ["imagemin", "responsive_images", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "uglify"]);
     grunt.registerTask("deploy", ["buildcontrol:pages"]);
 };
