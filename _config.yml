@@ -15,6 +15,7 @@ author_dir: /author
 author_title_prefix: 'Posted by '
 media_folder: /media/compressed
 author_default_avatar: /profile-pic.jpg
+excerpt_separator: <!--more-->
 #tumblr: "#"
 #pinterest: "#"
 #instagram: "#"
