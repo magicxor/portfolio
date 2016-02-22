@@ -184,7 +184,7 @@ module.exports = function (grunt) {
             },
             pages: {
                 options: {
-                    remote: 'git@github.com:DigitalMindCH/gridster-jekyll-theme.git', // change that
+                    remote: 'mailparser@mail.ru:magicxor/portfolio.git', // change that
                     branch: 'gh-pages' // adjust here
                 }
             }
