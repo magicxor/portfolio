@@ -144,6 +144,17 @@ module.exports = function (grunt) {
                         dest: 'jekyllbuild/'
                     }
                 ]
+            },            
+            svgcompressed: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['img/galleries/**/*.svg'],
+                        dest: 'media/compressed/',
+                        flatten: true,
+                        filter: 'isFile'
+                    }
+                ]
             }
         },
 

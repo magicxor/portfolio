@@ -27,10 +27,13 @@
                 <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}" class="noline">
                     {% if post.featimg contains '.png'%}
                     {% assign thumb = post.featimg | replace: '.png', '' %}
-                    <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/750x421/{{ thumb | append: '-750x421.png' }}" alt="{{ thumb }}">
+                        <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/750x421/{{ thumb | append: '-750x421.png' }}" alt="{{ thumb }}">
                     {% elsif post.featimg contains '.jpg'%}
                     {% assign thumb = post.featimg | replace: '.jpg', '' %}
                         <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/750x421/{{ thumb | append: '-750x421.jpg' }}" alt="{{ thumb }}">
+                    {% elsif post.featimg contains '.svg'%}
+                    {% assign thumb = post.featimg %}
+                        <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb }}" alt="{{ thumb }}">
                     {% endif %}
                 </a>
             {% endif %}
@@ -40,10 +43,13 @@
                 <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}" class="noline">
                     {% if post.featimg contains '.png'%}
                     {% assign thumb = post.featimg | replace: '.png', '' %}
-                    <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/750x421/{{ thumb | append: '-750x421.png' }}" alt="{{ thumb }}">
+                        <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/750x421/{{ thumb | append: '-750x421.png' }}" alt="{{ thumb }}">
                     {% elsif post.featimg contains '.jpg'%}
                     {% assign thumb = post.featimg | replace: '.jpg', '' %}
                         <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/750x421/{{ thumb | append: '-750x421.jpg' }}" alt="{{ thumb }}">
+                    {% elsif post.featimg contains '.svg'%}
+                    {% assign thumb = post.featimg %}
+                        <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb }}" alt="{{ thumb }}">
                     {% endif %}
                 </a>
         {% endif %}
