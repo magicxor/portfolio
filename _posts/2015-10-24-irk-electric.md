@@ -4,7 +4,7 @@ layout: post-no-image
 type: gallery
 featimg: irk-electric-preview.png
 title: A landing page for the company providing electrical works
-tags: []
+tags: [HTML5, landing]
 category: []
 gallery:
     - images:

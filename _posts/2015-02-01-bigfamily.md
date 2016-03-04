@@ -4,7 +4,7 @@ layout: post-no-image
 type: gallery
 featimg: bigfamily-preview.png
 title: A website for the non-profit social organization
-tags: []
+tags: [CMS, Wordpress]
 category: []
 gallery:
     - images:

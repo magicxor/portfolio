@@ -4,7 +4,7 @@ layout: post-no-image
 type: gallery
 featimg: sms-wifi-auth-scheme-p.png
 title: WiFi hotspot setup with SMS authentication
-tags: []
+tags: [WiFi, SMS, hotspot, LAMP, PHP, MySQL, FreeRADIUS, Mikrotik, Kannel]
 category: []
 gallery:
     - images:
